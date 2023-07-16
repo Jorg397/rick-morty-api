@@ -7,3 +7,13 @@ export interface EpisodeAPI {
   url: string
   created: string
 }
+
+export interface AllEpisodes {
+  info: {
+    count: number
+    pages: number
+    next: string
+    prev: string | null
+  }
+  results: EpisodeAPI[]
+}

@@ -17,3 +17,13 @@ interface Location {
   name: string
   url: string
 }
+
+export interface AllCharacters {
+  info: {
+    count: number
+    pages: number
+    next: string
+    prev: string | null
+  }
+  results: CharacterAPI[]
+}

@@ -1,13 +1,13 @@
 import { Injectable } from '@nestjs/common'
 import axios from 'axios'
-import { CharacterAPI } from '../models/character_api.model'
+import { AllCharacters, CharacterAPI } from '../models/character_api.model'
 
 @Injectable()
 export class CharactersApiService {
   private charactersApiUrl = 'https://rickandmortyapi.com/api/character'
 
-  async getAllCharacters(): Promise<CharacterAPI[]> {
-    const { data } = await axios.get<CharacterAPI[]>(this.charactersApiUrl)
+  async getAllCharacters(): Promise<AllCharacters> {
+    const { data } = await axios.get<AllCharacters>(this.charactersApiUrl)
     return data
   }
 

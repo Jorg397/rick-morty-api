@@ -7,3 +7,13 @@ export interface LocationAPI {
   url: string
   created: string
 }
+
+export interface AllLocations {
+  info: {
+    count: number
+    pages: number
+    next: string
+    prev: string | null
+  }
+  results: LocationAPI[]
+}
