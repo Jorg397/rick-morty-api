@@ -1,5 +1,4 @@
 import { TypeOrmModuleOptions } from '@nestjs/typeorm'
-import { join } from 'path'
 
 export const typeOrmConfig: TypeOrmModuleOptions = {
   type: 'mongodb',
@@ -7,5 +6,6 @@ export const typeOrmConfig: TypeOrmModuleOptions = {
   useNewUrlParser: true,
   synchronize: true,
   logging: true,
-  entities: [join(__dirname, '**', '*.entity.{ts,js}')],
+  database: 'db_rickMorty',
+  entities: [__dirname + '/../**/*.entity.js'],
 }

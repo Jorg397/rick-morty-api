@@ -1,9 +1,13 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm'
-
+import {
+  Column,
+  Entity,
+  ObjectId as ObjectIDType,
+  ObjectIdColumn,
+} from 'typeorm'
 @Entity('category')
 export class Category {
-  @PrimaryGeneratedColumn()
-  id: string
+  @ObjectIdColumn()
+  _id: ObjectIDType
 
   @Column()
   name: string
